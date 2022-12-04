@@ -1,6 +1,7 @@
 from itertools import groupby
 import devtools
 
+
 def total_max_calories(calories_list: list[str]) -> int:
     """
     Returns the total calories carried by the elf
@@ -14,8 +15,6 @@ def total_max_calories(calories_list: list[str]) -> int:
 
     calorie_totals = [sum_calories(elves) for elves in cleaned_up_elf_lists]
     
-    devtools.debug(calorie_totals)
-
     return max(calorie_totals)
 
 
