@@ -15,7 +15,7 @@ defmodule Day_1 do
     cleaned_up_input =
       input
       |> split("\n")
-      |> map(&String.trim/1)
+      |> map(&trim/1)
 
     elf_lists =
       cleaned_up_input
