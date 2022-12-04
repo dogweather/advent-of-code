@@ -7,4 +7,11 @@ defmodule ElixirCodeTest do
 
     assert Day_1.total_max_calories(input) == 24000
   end
+
+
+  test "Day 1/1 real data" do
+    {:ok, input} = File.read("./test/fixtures/day_1_input.txt")
+
+    assert Day_1.total_max_calories(input) == 71780
+  end
 end

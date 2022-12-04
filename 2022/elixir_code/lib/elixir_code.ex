@@ -6,6 +6,7 @@ defmodule Day_1 do
   import Enum, except: [split: 2]
   import String
 
+  @spec total_max_calories(binary) :: integer
   @doc """
   Find the Elf carrying the most Calories. How many total Calories
   is that Elf carrying?
