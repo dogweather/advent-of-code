@@ -1,4 +1,4 @@
-import gleam/int.{max}
+import gleam/int.{max, sum}
 import gleam/list.{chunk, filter, fold, map}
 import gleam/result
 import gleam/string.{split, trim}
@@ -17,7 +17,7 @@ pub fn total_max_calories(input: String) -> Int {
 
   let calorie_totals =
     elf_lists
-    |> map(int.sum)
+    |> map(sum)
 
   fold(calorie_totals, 0, max)
 }

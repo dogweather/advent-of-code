@@ -25,7 +25,7 @@ defmodule Day_1 do
 
     calorie_totals =
       elf_lists
-      |> map(fn l -> sum(l) end)
+      |> map(&sum/1)
 
     max(calorie_totals)
   end
