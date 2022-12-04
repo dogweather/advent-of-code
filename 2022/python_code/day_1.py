@@ -10,11 +10,11 @@ def total_max_calories(calories_list: list[str]) -> int:
 
     cleaned_up_input = [l.strip() for l in calories_list]
 
-    elf_lists = [list(elf) for _, elf in groupby(cleaned_up_input, len)]
+    elf_lists = [list(elf) for _, elf in groupby(cleaned_up_input, lambda x: x == "")]
     cleaned_up_elf_lists = [elves for elves in elf_lists if elves != ['']]
 
-    calorie_totals = [sum_calories(elves) for elves in cleaned_up_elf_lists]
-    
+    calorie_totals = sorted([sum_calories(elves) for elves in cleaned_up_elf_lists])
+
     return max(calorie_totals)
 
 
