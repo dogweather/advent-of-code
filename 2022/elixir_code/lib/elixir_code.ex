@@ -20,12 +20,12 @@ defmodule Day_1 do
     elf_lists =
       cleaned_up_input
       |> chunk_by(&(&1 == ""))
-      |> Enum.reject(&(&1 == [""]))
-      |> Enum.map(fn l -> map(l, &to_integer/1) end)
+      |> reject(&(&1 == [""]))
+      |> map(fn l -> map(l, &to_integer/1) end)
 
     calorie_totals =
       elf_lists
-      |> Enum.map(fn l -> sum(l) end)
+      |> map(fn l -> sum(l) end)
 
     max(calorie_totals)
   end
