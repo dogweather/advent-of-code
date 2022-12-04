@@ -1,8 +1,9 @@
+from io import TextIOWrapper
 from itertools import groupby
 import devtools
 
 
-def total_max_calories(calories_list: list[str]) -> int:
+def total_max_calories(calories_list: TextIOWrapper) -> int:
     """
     Returns the total calories carried by the elf
     who's carrying the most calories.
