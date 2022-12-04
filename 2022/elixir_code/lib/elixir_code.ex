@@ -1,18 +1,5 @@
-defmodule ElixirCode do
-  @moduledoc """
-  Documentation for `ElixirCode`.
-  """
-
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> ElixirCode.hello()
-      :world
-
-  """
-  def hello do
-    :world
+defmodule Day_1 do
+  def total_max_calories(input) do
+    0
   end
 end
