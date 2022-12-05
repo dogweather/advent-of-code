@@ -21,3 +21,7 @@ pub fn total_max_calories(input: String) -> Int {
 
   fold(calorie_totals, 0, max)
 }
+
+pub fn total_top3_calories(_input: String) -> Int {
+  0
+}

@@ -20,3 +20,10 @@ pub fn real_data_test() {
   day_1.total_max_calories(input)
   |> should.equal(71780)
 }
+
+pub fn sample_top3_data_test() {
+  assert Ok(input) = file.read("./test/fixtures/day_1_sample.txt")
+
+  day_1.total_top3_calories(input)
+  |> should.equal(45000)
+}
