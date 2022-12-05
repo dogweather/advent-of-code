@@ -21,5 +21,30 @@ toScores input =
 
 
 calculateScore : String -> Int
-calculateScore _ =
-    10
+calculateScore input =
+    let
+        moves =
+            String.split " " input
+    in
+    shapeScore moves + outcomeScore moves
+
+
+shapeScore : List String -> Int
+shapeScore moves =
+    case moves of
+        [ _, "X" ] ->
+            1
+
+        [ _, "Y" ] ->
+            2
+
+        [ _, "Z" ] ->
+            3
+
+        _ ->
+            0
+
+
+outcomeScore : List String -> Int
+outcomeScore _ =
+    0
