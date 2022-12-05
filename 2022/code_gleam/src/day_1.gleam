@@ -7,8 +7,8 @@ pub fn total_max_calories(input: String) -> Int {
   fold(calorie_totals(input), 0, max)
 }
 
-pub fn total_top3_calories(_input: String) -> Int {
-  0
+pub fn total_top3_calories(input: String) -> Int {
+  sum(calorie_totals(input))
 }
 
 fn calorie_totals(input: String) -> List(Int) {
