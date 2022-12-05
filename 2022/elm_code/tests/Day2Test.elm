@@ -21,6 +21,18 @@ suite =
                         |> Expect.equal 17189
                 )
             ]
+        , describe "revisedScore"
+            [ test "with sample data"
+                (\_ ->
+                    Day2.revisedScore sampleData
+                        |> Expect.equal 12
+                )
+            , test "with input data"
+                (\_ ->
+                    Day2.revisedScore inputData
+                        |> Expect.equal -1
+                )
+            ]
         ]
 
 
