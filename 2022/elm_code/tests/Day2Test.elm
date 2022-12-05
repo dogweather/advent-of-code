@@ -21,8 +21,6 @@ suite =
 
 sampleData : String
 sampleData =
-    """
-A Y
+    """A Y
 B X
-C Z
-"""
+C Z"""

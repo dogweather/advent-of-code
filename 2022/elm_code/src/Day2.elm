@@ -1,10 +1,25 @@
 module Day2 exposing (score)
 
+import Json.Decode exposing (string)
 
-score : string -> number
+
+score : String -> Int
 score input =
-    let
-        _ =
-            Debug.log "hi" "there"
-    in
+    input
+        |> toLines
+        |> sum
+
+
+
+-- |> toScores
+-- |> sum
+
+
+toLines : String -> List String
+toLines input =
+    Debug.log "lines" (String.split "\n" input)
+
+
+sum : List String -> Int
+sum _ =
     0
