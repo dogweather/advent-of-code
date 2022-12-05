@@ -13,7 +13,8 @@ defmodule Day_1 do
   """
   def total_max_calories(input) when is_bitstring(input) do
     calorie_totals(input)
-    |> max
+    |> take(1)
+    |> sum
   end
 
   def total_top3_calories(input) do
