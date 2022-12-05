@@ -1,23 +1,26 @@
-module Day2 exposing (score)
+module Day2 exposing (revisedScore, score)
 
 
 score : String -> Int
 score input =
     input
         |> toLines
-        |> toScores
+        |> List.map calculateScore
+        |> List.sum
+
+
+revisedScore : String -> Int
+revisedScore input =
+    input
+        |> toLines
+        |> List.map revise
+        |> List.map calculateScore
         |> List.sum
 
 
 toLines : String -> List String
 toLines input =
     String.split "\n" input
-
-
-toScores : List String -> List Int
-toScores input =
-    input
-        |> List.map calculateScore
 
 
 calculateScore : String -> Int
@@ -77,3 +80,37 @@ outcomeScore moves =
 
         _ ->
             0
+
+
+revise : String -> String
+revise line =
+    case line of
+        "A X" ->
+            "A Z"
+
+        "B X" ->
+            "B X"
+
+        "C X" ->
+            "C Y"
+
+        "A Y" ->
+            "A X"
+
+        "B Y" ->
+            "B Y"
+
+        "C Y" ->
+            "C Z"
+
+        "A Z" ->
+            "A Y"
+
+        "B Z" ->
+            "B Z"
+
+        "C Z" ->
+            "C X"
+
+        l ->
+            l

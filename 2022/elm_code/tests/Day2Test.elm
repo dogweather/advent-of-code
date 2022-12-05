@@ -30,7 +30,7 @@ suite =
             , test "with input data"
                 (\_ ->
                     Day2.revisedScore inputData
-                        |> Expect.equal -1
+                        |> Expect.equal 13490
                 )
             ]
         ]
