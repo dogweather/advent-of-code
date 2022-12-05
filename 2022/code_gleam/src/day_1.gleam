@@ -1,5 +1,5 @@
 import gleam/int.{max, sum}
-import gleam/list.{chunk, filter, fold, map}
+import gleam/list.{chunk, filter, fold, map, reverse, sort, take}
 import gleam/result
 import gleam/string.{split, trim}
 
@@ -8,7 +8,11 @@ pub fn total_max_calories(input: String) -> Int {
 }
 
 pub fn total_top3_calories(input: String) -> Int {
-  sum(calorie_totals(input))
+  calorie_totals(input)
+  |> sort(int.compare)
+  |> reverse
+  |> take(3)
+  |> sum
 }
 
 fn calorie_totals(input: String) -> List(Int) {
