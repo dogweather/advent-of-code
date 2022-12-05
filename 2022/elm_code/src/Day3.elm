@@ -8,3 +8,8 @@ prioritiesSum input =
         |> List.map findMisplacedType
         |> List.map calculatePriority
         |> List.sum
+
+
+toLines : String -> List String
+toLines input =
+    String.split "\n" input
