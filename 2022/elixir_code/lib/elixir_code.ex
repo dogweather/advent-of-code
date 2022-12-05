@@ -12,6 +12,10 @@ defmodule Day_1 do
   is that Elf carrying?
   """
   def total_max_calories(input) when is_bitstring(input) do
+    max(calorie_totals(input))
+  end
+
+  defp calorie_totals(input) do
     cleaned_up_input =
       input
       |> split("\n")
@@ -23,10 +27,7 @@ defmodule Day_1 do
       |> reject(&(&1 == [""]))
       |> map(fn l -> map(l, &to_integer/1) end)
 
-    calorie_totals =
-      elf_lists
-      |> map(&sum/1)
-
-    max(calorie_totals)
+    elf_lists
+    |> map(&sum/1)
   end
 end
