@@ -1,25 +1,25 @@
 module Day2 exposing (score)
 
-import Json.Decode exposing (string)
-
 
 score : String -> Int
 score input =
     input
         |> toLines
-        |> sum
-
-
-
--- |> toScores
--- |> sum
+        |> toScores
+        |> List.sum
 
 
 toLines : String -> List String
 toLines input =
-    Debug.log "lines" (String.split "\n" input)
+    String.split "\n" input
 
 
-sum : List String -> Int
-sum _ =
-    0
+toScores : List String -> List Int
+toScores input =
+    input
+        |> List.map calculateScore
+
+
+calculateScore : String -> Int
+calculateScore _ =
+    10
