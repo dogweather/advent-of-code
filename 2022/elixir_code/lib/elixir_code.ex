@@ -4,7 +4,7 @@ defmodule Day_1 do
   """
 
   import Enum, except: [split: 2]
-  import String
+  import String, except: [reverse: 1]
 
   @spec total_max_calories(binary) :: integer
   @doc """
@@ -18,7 +18,8 @@ defmodule Day_1 do
 
   def total_top3_calories(input) do
     calorie_totals(input)
-    |> max
+    |> take(3)
+    |> sum
   end
 
   defp calorie_totals(input) do
@@ -35,5 +36,7 @@ defmodule Day_1 do
 
     elf_lists
     |> map(&sum/1)
+    |> sort
+    |> reverse
   end
 end
