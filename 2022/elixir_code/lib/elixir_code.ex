@@ -12,7 +12,13 @@ defmodule Day_1 do
   is that Elf carrying?
   """
   def total_max_calories(input) when is_bitstring(input) do
-    max(calorie_totals(input))
+    calorie_totals(input)
+    |> max
+  end
+
+  def total_top3_calories(input) do
+    calorie_totals(input)
+    |> max
   end
 
   defp calorie_totals(input) do
