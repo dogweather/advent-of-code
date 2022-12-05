@@ -13,3 +13,13 @@ prioritiesSum input =
 toLines : String -> List String
 toLines input =
     String.split "\n" input
+
+
+findMisplacedType : String -> String
+findMisplacedType _ =
+    "p"
+
+
+calculatePriority : String -> Int
+calculatePriority _ =
+    10
