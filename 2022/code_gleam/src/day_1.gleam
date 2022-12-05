@@ -10,8 +10,6 @@ pub fn total_max_calories(input: String) -> Int {
 
 pub fn total_top3_calories(input: String) -> Int {
   calorie_totals(input)
-  |> sort(int.compare)
-  |> reverse
   |> take(3)
   |> sum
 }
@@ -30,4 +28,6 @@ fn calorie_totals(input: String) -> List(Int) {
 
   elf_lists
   |> map(sum)
+  |> sort(int.compare)
+  |> reverse
 }
