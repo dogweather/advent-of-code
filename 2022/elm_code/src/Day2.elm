@@ -48,7 +48,7 @@ shapeScore moves =
 outcomeScore : List String -> Int
 outcomeScore moves =
     case moves of
-        [ "A", "A" ] ->
+        [ "A", "X" ] ->
             3
 
         [ "B", "Y" ] ->
@@ -56,6 +56,24 @@ outcomeScore moves =
 
         [ "C", "Z" ] ->
             3
+
+        [ "A", "Y" ] ->
+            6
+
+        [ "B", "Z" ] ->
+            6
+
+        [ "C", "X" ] ->
+            6
+
+        [ "A", "Z" ] ->
+            0
+
+        [ "B", "X" ] ->
+            0
+
+        [ "C", "Y" ] ->
+            0
 
         _ ->
             0
