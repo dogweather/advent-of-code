@@ -4,7 +4,8 @@ import gleam/result
 import gleam/string.{split, trim}
 
 pub fn total_max_calories(input: String) -> Int {
-  fold(calorie_totals(input), 0, max)
+  calorie_totals(input)
+  |> fold(0, max)
 }
 
 pub fn total_top3_calories(input: String) -> Int {
