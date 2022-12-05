@@ -11,7 +11,7 @@ pub fn total_top3_calories(_input: String) -> Int {
   0
 }
 
-fn calorie_totals(input: String) -> List[Int] {
+fn calorie_totals(input: String) -> List(Int) {
   let cleaned_up_input =
     input
     |> split("\n")
@@ -23,7 +23,6 @@ fn calorie_totals(input: String) -> List[Int] {
     |> filter(fn(l) { l != [""] })
     |> map(fn(l) { map(l, fn(s) { result.unwrap(int.parse(s), 0) }) })
 
-  
   elf_lists
-    |> map(sum)
+  |> map(sum)
 }
