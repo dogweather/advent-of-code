@@ -1,7 +1,5 @@
 module Day3 exposing (..)
 
-import Html exposing (input)
-import Html.Attributes exposing (type_)
 import Set
 
 
