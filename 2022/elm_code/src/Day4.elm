@@ -18,5 +18,17 @@ isContained r1 r2 =
 
 
 toRange : String -> Range
-toRange _ =
-    { from = 0, to = 0 }
+toRange rangeString =
+    let
+        numbers =
+            rangeString
+                |> String.split "-"
+                |> List.map String.toInt
+                |> List.filterMap (\x -> x)
+    in
+    case numbers of
+        [ x, y ] ->
+            { from = x, to = y }
+
+        _ ->
+            { from = 0, to = 0 }
