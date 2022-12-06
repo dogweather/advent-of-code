@@ -11,7 +11,7 @@ suite =
         [ describe "isContained"
             [ test "basic false"
                 (\_ ->
-                    Day4.isContained "1-2" "3-4"
+                    Day4.isContained { from = 1, to = 2 } { from = 3, to = 4 }
                         |> Expect.equal False
                 )
             ]
