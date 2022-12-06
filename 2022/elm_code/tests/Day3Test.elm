@@ -19,20 +19,19 @@ suite =
                     Day3.prioritiesSum inputData
                         |> Expect.equal 7746
                 )
+            , describe "badgePrioritiesSum"
+                [ test "with sample data"
+                    (\_ ->
+                        Day3.badgePrioritiesSum sampleData
+                            |> Expect.equal 70
+                    )
+                , test "with input data"
+                    (\_ ->
+                        Day3.badgePrioritiesSum inputData
+                            |> Expect.equal 0
+                    )
+                ]
             ]
-
-        -- , describe "revisedScore"
-        --     [ test "with sample data"
-        --         (\_ ->
-        --             Day3.revisedScore sampleData
-        --                 |> Expect.equal 12
-        --         )
-        --     , test "with input data"
-        --         (\_ ->
-        --             Day3.revisedScore inputData
-        --                 |> Expect.equal 13490
-        --         )
-        --     ]
         ]
 
 
