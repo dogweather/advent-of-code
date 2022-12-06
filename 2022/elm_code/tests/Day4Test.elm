@@ -45,35 +45,48 @@ suite =
                         |> Expect.equal True
                 )
             ]
+        , describe
+            "toRange"
+            [ test "simple"
+                (\_ ->
+                    Day4.toRange "1-2"
+                        |> Expect.equal { from = 1, to = 2 }
+                )
+            , test "greater than 10"
+                (\_ ->
+                    Day4.toRange "12-34"
+                        |> Expect.equal { from = 12, to = 34 }
+                )
+            ]
+        , describe
+            "fullyContainedPairs"
+            [ test "with sample data"
+                (\_ ->
+                    Day4.fullyContainedPairs sampleData
+                        |> Expect.equal 157
+                )
+            , test "with input data"
+                (\_ ->
+                    Day4.fullyContainedPairs inputData
+                        |> Expect.equal 7746
+                )
 
-        -- , describe
-        --     "fullyContainedPairs"
-        --     [ test "with sample data"
-        --         (\_ ->
-        --             Day4.fullyContainedPairs sampleData
-        --                 |> Expect.equal 157
-        --         )
-        --     , test "with input data"
-        --         (\_ ->
-        --             Day4.fullyContainedPairs inputData
-        --                 |> Expect.equal 7746
-        --         )
-        -- , describe "badgePrioritiesSum"
-        --     [ test "with sample data"
-        --         (\_ ->
-        --             Day4.badgePrioritiesSum sampleData
-        --                 |> Expect.equal 70
-        --         )
-        --     , test "with input data"
-        --         (\_ ->
-        --             Day4.badgePrioritiesSum inputData
-        --                 |> Expect.equal 2604
-        --         )
+            -- , describe "badgePrioritiesSum"
+            --     [ test "with sample data"
+            --         (\_ ->
+            --             Day4.badgePrioritiesSum sampleData
+            --                 |> Expect.equal 70
+            --         )
+            --     , test "with input data"
+            --         (\_ ->
+            --             Day4.badgePrioritiesSum inputData
+            --                 |> Expect.equal 2604
+            --         )
+            ]
         ]
 
 
 
--- ]
 -- ]
 
 
