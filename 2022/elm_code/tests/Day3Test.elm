@@ -28,7 +28,7 @@ suite =
                 , test "with input data"
                     (\_ ->
                         Day3.badgePrioritiesSum inputData
-                            |> Expect.equal 0
+                            |> Expect.equal 2604
                     )
                 ]
             ]

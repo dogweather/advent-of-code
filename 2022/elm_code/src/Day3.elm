@@ -1,5 +1,6 @@
 module Day3 exposing (badgePrioritiesSum, prioritiesSum)
 
+import Exts.List
 import Set
 
 
@@ -16,7 +17,7 @@ badgePrioritiesSum : String -> Int
 badgePrioritiesSum input =
     input
         |> toLines
-        |> List.map createElfGroups
+        |> Exts.List.chunk 3
         |> List.map findBadgeType
         |> List.map calculatePriority
         |> List.sum
@@ -63,6 +64,26 @@ findCommonCharacter strings =
     case listOfSets of
         [ letters1, letters2 ] ->
             Set.intersect letters1 letters2
+                |> Set.toList
+                |> List.head
+                |> Maybe.withDefault '-'
+
+        _ ->
+            '-'
+
+
+findBadgeType : List String -> Char
+findBadgeType strings =
+    let
+        listOfSets =
+            strings
+                |> List.map String.toList
+                |> List.map Set.fromList
+    in
+    case listOfSets of
+        [ letters1, letters2, letters3 ] ->
+            Set.intersect letters1 letters2
+                |> Set.intersect letters3
                 |> Set.toList
                 |> List.head
                 |> Maybe.withDefault '-'
