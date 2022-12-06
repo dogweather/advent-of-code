@@ -8,40 +8,40 @@ import Test exposing (..)
 suite : Test
 suite =
     describe "Day4"
-        [ describe "isContained"
+        [ describe "contained"
             [ test "basic false"
                 (\_ ->
-                    Day4.isContained { from = 1, to = 2 } { from = 3, to = 4 }
+                    Day4.contained { from = 1, to = 2 } { from = 3, to = 4 }
                         |> Expect.equal False
                 )
             , test "basic false 2"
                 (\_ ->
-                    Day4.isContained { from = 3, to = 4 } { from = 1, to = 2 }
+                    Day4.contained { from = 3, to = 4 } { from = 1, to = 2 }
                         |> Expect.equal False
                 )
             , test "overlapping false 1"
                 (\_ ->
-                    Day4.isContained { from = 1, to = 5 } { from = 4, to = 8 }
+                    Day4.contained { from = 1, to = 5 } { from = 4, to = 8 }
                         |> Expect.equal False
                 )
             , test "overlapping false 2"
                 (\_ ->
-                    Day4.isContained { from = 4, to = 8 } { from = 1, to = 5 }
+                    Day4.contained { from = 4, to = 8 } { from = 1, to = 5 }
                         |> Expect.equal False
                 )
             , test "basic true"
                 (\_ ->
-                    Day4.isContained { from = 1, to = 5 } { from = 2, to = 4 }
+                    Day4.contained { from = 1, to = 5 } { from = 2, to = 4 }
                         |> Expect.equal True
                 )
             , test "basic true 2"
                 (\_ ->
-                    Day4.isContained { from = 2, to = 4 } { from = 1, to = 5 }
+                    Day4.contained { from = 2, to = 4 } { from = 1, to = 5 }
                         |> Expect.equal True
                 )
             , test "basic true 3"
                 (\_ ->
-                    Day4.isContained { from = 1, to = 5 } { from = 2, to = 5 }
+                    Day4.contained { from = 1, to = 5 } { from = 2, to = 5 }
                         |> Expect.equal True
                 )
             ]
