@@ -19,6 +19,16 @@ suite =
                     Day4.isContained { from = 3, to = 4 } { from = 1, to = 2 }
                         |> Expect.equal False
                 )
+            , test "overlapping false 1"
+                (\_ ->
+                    Day4.isContained { from = 1, to = 5 } { from = 4, to = 8 }
+                        |> Expect.equal False
+                )
+            , test "overlapping false 2"
+                (\_ ->
+                    Day4.isContained { from = 4, to = 8 } { from = 1, to = 5 }
+                        |> Expect.equal False
+                )
             ]
 
         -- , describe
