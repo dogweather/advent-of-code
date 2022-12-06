@@ -13,14 +13,14 @@ fullyContainedPairs : String -> Int
 fullyContainedPairs input =
     input
         |> Util.toLines
-        |> Util.count (\s -> is contained s)
+        |> Util.count (\inputLine -> is contained inputLine)
 
 
 overlappingPairs : String -> Int
 overlappingPairs input =
     input
         |> Util.toLines
-        |> Util.count (\s -> is overlapping s)
+        |> Util.count (\inputLine -> is overlapping inputLine)
 
 
 is : (Range -> Range -> Bool) -> String -> Bool
