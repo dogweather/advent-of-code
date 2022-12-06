@@ -13,16 +13,14 @@ fullyContainedPairs : String -> Int
 fullyContainedPairs input =
     input
         |> Util.toLines
-        |> List.filter hasContained
-        |> List.length
+        |> Util.count hasContained
 
 
 overlappingPairs : String -> Int
 overlappingPairs input =
     input
         |> Util.toLines
-        |> List.filter hasOverlapping
-        |> List.length
+        |> Util.count hasOverlapping
 
 
 hasContained : String -> Bool
