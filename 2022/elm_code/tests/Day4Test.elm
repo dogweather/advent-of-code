@@ -70,24 +70,21 @@ suite =
                     Day4.fullyContainedPairs inputData
                         |> Expect.equal 582
                 )
-
-            -- , describe "badgePrioritiesSum"
-            --     [ test "with sample data"
-            --         (\_ ->
-            --             Day4.badgePrioritiesSum sampleData
-            --                 |> Expect.equal 70
-            --         )
-            --     , test "with input data"
-            --         (\_ ->
-            --             Day4.badgePrioritiesSum inputData
-            --                 |> Expect.equal 2604
-            --         )
+            , describe
+                "overlap"
+                [ test "with sample data"
+                    (\_ ->
+                        Day4.overlap sampleData
+                            |> Expect.equal 4
+                    )
+                , test "with input data"
+                    (\_ ->
+                        Day4.overlap inputData
+                            |> Expect.equal 0
+                    )
+                ]
             ]
         ]
-
-
-
--- ]
 
 
 sampleData : String
