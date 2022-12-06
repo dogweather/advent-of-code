@@ -13,18 +13,18 @@ fullyContainedPairs : String -> Int
 fullyContainedPairs input =
     input
         |> Util.toLines
-        |> Util.count hasContained
+        |> Util.count (is contained)
 
 
 overlappingPairs : String -> Int
 overlappingPairs input =
     input
         |> Util.toLines
-        |> Util.count hasOverlapping
+        |> Util.count (is overlapping)
 
 
-hasContained : String -> Bool
-hasContained input =
+is : (Range -> Range -> Bool) -> String -> Bool
+is func input =
     let
         ranges =
             input
@@ -33,35 +33,19 @@ hasContained input =
     in
     case ranges of
         [ r1, r2 ] ->
-            isContained r1 r2
+            func r1 r2
 
         _ ->
             False
 
 
-hasOverlapping : String -> Bool
-hasOverlapping input =
-    let
-        ranges =
-            input
-                |> String.split ","
-                |> List.map toRange
-    in
-    case ranges of
-        [ r1, r2 ] ->
-            isOverlapping r1 r2
-
-        _ ->
-            False
-
-
-isContained : Range -> Range -> Bool
-isContained r1 r2 =
+contained : Range -> Range -> Bool
+contained r1 r2 =
     (r1.from >= r2.from && r1.to <= r2.to) || (r2.from >= r1.from && r2.to <= r1.to)
 
 
-isOverlapping : Range -> Range -> Bool
-isOverlapping r1 r2 =
+overlapping : Range -> Range -> Bool
+overlapping r1 r2 =
     not ((r1.from < r2.from && r1.to < r2.from) || (r2.from < r1.from && r2.to < r1.from))
 
 
