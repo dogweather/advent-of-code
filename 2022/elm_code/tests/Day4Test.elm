@@ -63,12 +63,12 @@ suite =
             [ test "with sample data"
                 (\_ ->
                     Day4.fullyContainedPairs sampleData
-                        |> Expect.equal 157
+                        |> Expect.equal 2
                 )
             , test "with input data"
                 (\_ ->
                     Day4.fullyContainedPairs inputData
-                        |> Expect.equal 7746
+                        |> Expect.equal 582
                 )
 
             -- , describe "badgePrioritiesSum"
