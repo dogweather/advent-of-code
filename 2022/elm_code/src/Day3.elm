@@ -1,10 +1,19 @@
-module Day3 exposing (..)
+module Day3 exposing (badgePrioritiesSum, prioritiesSum)
 
 import Set
 
 
 prioritiesSum : String -> Int
 prioritiesSum input =
+    input
+        |> toLines
+        |> List.map findMisplacedType
+        |> List.map calculatePriority
+        |> List.sum
+
+
+badgePrioritiesSum : String -> Int
+badgePrioritiesSum input =
     input
         |> toLines
         |> List.map findMisplacedType
