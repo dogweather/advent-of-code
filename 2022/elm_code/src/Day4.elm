@@ -1,5 +1,7 @@
 module Day4 exposing (..)
 
+import Util
+
 
 type alias Range =
     { from : Int
@@ -8,8 +10,27 @@ type alias Range =
 
 
 fullyContainedPairs : String -> Int
-fullyContainedPairs _ =
-    0
+fullyContainedPairs input =
+    input
+        |> Util.toLines
+        |> List.filter hasContained
+        |> List.length
+
+
+hasContained : String -> Bool
+hasContained input =
+    let
+        ranges =
+            input
+                |> String.split ","
+                |> List.map toRange
+    in
+    case ranges of
+        [ r1, r2 ] ->
+            isContained r1 r2
+
+        _ ->
+            False
 
 
 isContained : Range -> Range -> Bool
