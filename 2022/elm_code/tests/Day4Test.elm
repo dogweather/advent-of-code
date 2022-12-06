@@ -71,15 +71,15 @@ suite =
                         |> Expect.equal 582
                 )
             , describe
-                "overlap"
+                "overlappingPairs"
                 [ test "with sample data"
                     (\_ ->
-                        Day4.overlap sampleData
+                        Day4.overlappingPairs sampleData
                             |> Expect.equal 4
                     )
                 , test "with input data"
                     (\_ ->
-                        Day4.overlap inputData
+                        Day4.overlappingPairs inputData
                             |> Expect.equal 0
                     )
                 ]
