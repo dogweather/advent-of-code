@@ -16,7 +16,8 @@ badgePrioritiesSum : String -> Int
 badgePrioritiesSum input =
     input
         |> toLines
-        |> List.map findMisplacedType
+        |> List.map createElfGroups
+        |> List.map findBadgeType
         |> List.map calculatePriority
         |> List.sum
 
