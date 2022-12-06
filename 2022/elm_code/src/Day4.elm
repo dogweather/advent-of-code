@@ -13,5 +13,5 @@ fullyContainedPairs _ =
 
 
 isContained : Range -> Range -> Bool
-isContained _ _ =
-    True
+isContained r1 r2 =
+    r1.from >= r2.from && r1.to <= r2.to

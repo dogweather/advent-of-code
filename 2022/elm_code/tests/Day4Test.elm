@@ -15,35 +15,35 @@ suite =
                         |> Expect.equal False
                 )
             ]
-        , describe
-            "fullyContainedPairs"
-            [ test "with sample data"
-                (\_ ->
-                    Day4.fullyContainedPairs sampleData
-                        |> Expect.equal 157
-                )
-            , test "with input data"
-                (\_ ->
-                    Day4.fullyContainedPairs inputData
-                        |> Expect.equal 7746
-                )
 
-            -- , describe "badgePrioritiesSum"
-            --     [ test "with sample data"
-            --         (\_ ->
-            --             Day4.badgePrioritiesSum sampleData
-            --                 |> Expect.equal 70
-            --         )
-            --     , test "with input data"
-            --         (\_ ->
-            --             Day4.badgePrioritiesSum inputData
-            --                 |> Expect.equal 2604
-            --         )
-            ]
+        -- , describe
+        --     "fullyContainedPairs"
+        --     [ test "with sample data"
+        --         (\_ ->
+        --             Day4.fullyContainedPairs sampleData
+        --                 |> Expect.equal 157
+        --         )
+        --     , test "with input data"
+        --         (\_ ->
+        --             Day4.fullyContainedPairs inputData
+        --                 |> Expect.equal 7746
+        --         )
+        -- , describe "badgePrioritiesSum"
+        --     [ test "with sample data"
+        --         (\_ ->
+        --             Day4.badgePrioritiesSum sampleData
+        --                 |> Expect.equal 70
+        --         )
+        --     , test "with input data"
+        --         (\_ ->
+        --             Day4.badgePrioritiesSum inputData
+        --                 |> Expect.equal 2604
+        --         )
         ]
 
 
 
+-- ]
 -- ]
 
 
