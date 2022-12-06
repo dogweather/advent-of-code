@@ -34,6 +34,11 @@ suite =
                     Day4.isContained { from = 1, to = 5 } { from = 2, to = 4 }
                         |> Expect.equal True
                 )
+            , test "basic true 2"
+                (\_ ->
+                    Day4.isContained { from = 2, to = 4 } { from = 1, to = 5 }
+                        |> Expect.equal True
+                )
             ]
 
         -- , describe
