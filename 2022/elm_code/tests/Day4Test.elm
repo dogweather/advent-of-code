@@ -80,7 +80,7 @@ suite =
                 , test "with input data"
                     (\_ ->
                         Day4.overlappingPairs inputData
-                            |> Expect.equal 0
+                            |> Expect.equal 893
                     )
                 ]
             ]

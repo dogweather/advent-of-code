@@ -64,7 +64,7 @@ isContained r1 r2 =
 
 isOverlapping : Range -> Range -> Bool
 isOverlapping r1 r2 =
-    r1.to >= r2.to || r2.to >= r1.to
+    not ((r1.from < r2.from && r1.to < r2.from) || (r2.from < r1.from && r2.to < r1.from))
 
 
 toRange : String -> Range
