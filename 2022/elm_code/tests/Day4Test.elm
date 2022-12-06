@@ -8,7 +8,15 @@ import Test exposing (..)
 suite : Test
 suite =
     describe "Day4"
-        [ describe "fullyContainedPairs"
+        [ describe "isContained"
+            [ test "basic false"
+                (\_ ->
+                    Day4.isContained "1-2" "3-4"
+                        |> Expect.equal False
+                )
+            ]
+        , describe
+            "fullyContainedPairs"
             [ test "with sample data"
                 (\_ ->
                     Day4.fullyContainedPairs sampleData
