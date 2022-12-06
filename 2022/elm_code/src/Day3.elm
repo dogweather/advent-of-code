@@ -1,6 +1,7 @@
 module Day3 exposing (..)
 
 import Html exposing (input)
+import Html.Attributes exposing (type_)
 import Set
 
 
@@ -26,8 +27,12 @@ findMisplacedType longString =
 
 
 calculatePriority : Char -> Int
-calculatePriority _ =
-    10
+calculatePriority itemType =
+    if Char.isLower itemType then
+        Char.toCode itemType - 96
+
+    else
+        Char.toCode itemType - 38
 
 
 splitInHalf : String -> List String
